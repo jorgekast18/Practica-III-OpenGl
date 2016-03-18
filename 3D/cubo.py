@@ -25,8 +25,8 @@ def init():
   glMatrixMode(GL_PROJECTION) # Matriz de proyecccion
   glLoadIdentity()
   glOrtho(-1, 1, -1, 1, 1, -2) # Proyeccion paralela alternativa 1
-  #glOrtho(-1, 1, -0.5, 1, 1, -1) # Proyeccion paralela alternativa 2
-  #glOrtho(-0.5, 0.4, -0.5, 1, -0.5, 0.9) # Proyeccion alternativa 3
+  # glOrtho(-1, 1, -0.5, 1, 1, -1) # Proyeccion paralela alternativa 2
+  # glOrtho(-0.5, 0.4, -0.5, 1, -0.5, 0.9) # Proyeccion alternativa 3
 
   imprimirMatrizProyecccion()
 
@@ -45,10 +45,10 @@ def dibujarCubo():
   glClear (GL_COLOR_BUFFER_BIT)
   glMatrixMode (GL_MODELVIEW)
   glLoadIdentity()
-  #gluLookAt(0.1, 0.1, 0.5, 0.2, 0.1, 0.1, 0, 0.1, 0) # Posicion de la camara, altera a la matriz MODELVIEW
-  gluLookAt(-0.3, 0.2, -0.1, 0.2, 0.4, 0.4, 0.1, 0.1, 0)
-  #gluLookAt(0.1, 0.1, 0.5, 0.2, 0.1, 0.1, 0, 0.2, 0)
-  #glRotatef(70, 1,3,6)
+  # gluLookAt(0.1, 0.1, 0.5, 0.2, 0.1, 0.1, 0, 0.1, 0) # Posicion de la camara, altera a la matriz MODELVIEW
+  # gluLookAt(-0.3, 0.2, -0.1, 0.2, 0.4, 0.4, 0.1, 0.1, 0)
+  # gluLookAt(0.1, 0.1, 0.5, 0.2, 0.1, 0.1, 0, 0.2, 0)
+  glRotatef(70, 1,3,6)
   imprimirMatrizModelado()
 
   #Lado frontal del cubo

@@ -4,11 +4,11 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 
 # ====================================================================
-#						      FUNCIONES
+#                 FUNCIONES
 #
 #
 # ====================================================================
-# 								DATOS
+#                 DATOS
 # Nombre : Jorge A. Castanio, Sebastian Velasquez, Oscar Eduardo Ramirez
 # Codigo : 1153641, -----, -----
 # Plan: Ingenieria de Sistemas
@@ -24,8 +24,8 @@ def init():
   glViewport(0, 0, 500, 500)
   glMatrixMode(GL_PROJECTION)
   glLoadIdentity()
-  # glFrustum(-0.2, 0.2, -0.2, 0.2, 0.2, 0.9) # Proyeccion perspectiva alternativa 1
-  glFrustum(-0.6, 0.7, -0.7, 0.1, 0.1, 0.8) # Proyeccion perspectiva alternativa 2
+  glFrustum(-0.2, 0.2, -0.2, 0.2, 0.2, 0.9) # Proyeccion perspectiva alternativa 1
+  # glFrustum(-0.6, 0.7, -0.7, 0.1, 0.1, 0.8) # Proyeccion perspectiva alternativa 2
   # glFrustum(-6, 7, -7, 1, 1, 50) # Proyeccion perspectiva alternativa 3
   imprimirMatrizProyecccion()
 
@@ -41,17 +41,17 @@ def imprimirMatrizModelado():
 
 
 def dibujarCubo():
-  glClear (GL_COLOR_BUFFER_BIT) #Borramos buffer de color
-  glMatrixMode (GL_MODELVIEW) # Matriz de modelado
+  glClear (GL_COLOR_BUFFER_BIT)
+  glMatrixMode (GL_MODELVIEW)
   glLoadIdentity()
   # gluLookAt(0.1, 0.1, 0.5, 0.2, 0.1, 0.1, 0, 0.1, 0) # Posicion de la camara, altera a la matriz MODELVIEW
-  # gluLookAt(0.1, 0.1, 0.5, 0.2, 0.1, 0.1, 0, 0.1, 0.3)
-  gluLookAt(-0.6, 0.7, 0.7, 0.5, 0.5, 0.5, 0.9, 0.9, 0.3)
-  #glRotatef(70, 1,3,6)#Hacemos una transformacion para apreciar mejor la figura
+  gluLookAt(-0.3, 0.2, -0.1, 0.2, 0.4, 0.4, 0.1, 0.1, 0)
+  # gluLookAt(-0.6, 0.7, 0.7, 0.5, 0.5, 0.5, 0.9, 0.9, 0.3)
   imprimirMatrizModelado()
 
   #Lado frontal del cubo
   glBegin(GL_POLYGON);
+  glColor3f(1.0,  0.2, 0.5)
   glVertex3f(  0.35, -0.35, -0.35 )
   glVertex3f(  0.35,  0.35, -0.35 )
   glVertex3f( -0.35,  0.35, -0.35 )
@@ -66,9 +66,10 @@ def dibujarCubo():
   glVertex3f(-0.35,  0.35, 0.35)
   glVertex3f(-0.35, -0.35, 0.35)
   glEnd()
+  
 
   # LADO DERECHO: lado morado
-  glBegin(GL_POLYGON)
+  glBegin(GL_TRIANGLES)
   glColor3f(  0.5,  0.0,  0.5 )
   glVertex3f( 0.35, -0.35, -0.35 )
   glVertex3f( 0.35,  0.35, -0.35 )
@@ -76,31 +77,17 @@ def dibujarCubo():
   glVertex3f( 0.35, -0.35,  0.35 )
   glEnd()
 
-  # LADO IZQUIERDO: lado verde
-  glBegin(GL_POLYGON)
-  glColor3f(   0.0,  0.5,  0.0 )
-  glVertex3f( -0.35, -0.35,  0.35 )
-  glVertex3f( -0.35,  0.35,  0.35 )
-  glVertex3f( -0.35,  0.35, -0.35 )
-  glVertex3f( -0.35, -0.35, -0.35 )
-  glEnd()
+ 
 
-  # LADO SUPERIOR: lado azul
-  glBegin(GL_POLYGON)
-  glColor3f(   0.0,  0.0,  0.5 )
-  glVertex3f(  0.35,  0.35,  0.35 )
-  glVertex3f(  0.35,  0.35, -0.35 )
-  glVertex3f( -0.35,  0.35, -0.35 )
-  glVertex3f( -0.35,  0.35,  0.35 )
-  glEnd()
   # LADO INFERIOR: lado rojo
-  glBegin(GL_POLYGON)
+  glBegin(GL_TRIANGLES)
   glColor3f(   0.5,  0.0,  0.0 )
   glVertex3f(  0.35, -0.35, -0.35 )
   glVertex3f(  0.35, -0.35,  0.35 )
   glVertex3f( -0.35, -0.35,  0.35 )
   glVertex3f( -0.35, -0.35, -0.35 )
   glEnd()
+
   glFlush()
 
 
@@ -110,7 +97,7 @@ def main():
   glEnable(GL_DEPTH_TEST)
   glutInitWindowSize (500, 500)
   glutInitWindowPosition (100, 100)
-  glutCreateWindow ("Taller3 - Cubo con proyeccion perspectiva")
+  glutCreateWindow ("Taller3 - Irregular con proyeccion perspectiva")
   init ()
   glutDisplayFunc(dibujarCubo)
   glutMainLoop()

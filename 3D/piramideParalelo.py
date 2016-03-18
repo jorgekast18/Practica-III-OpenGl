@@ -24,9 +24,9 @@ def init():
   glViewport(0, 0, 500, 500)
   glMatrixMode(GL_PROJECTION)
   glLoadIdentity()
-  glOrtho(-1, 1, -1, 1, 1, -2) # Proyeccion paralela alternativa 1
-  #glOrtho(-0.4, 0.3, -0.6, 1, 0.3, -1) # Proyeccion paralela alternativa 2
-  #glOrtho(-0.8, 1, -0.5, 1, -0.5, 0.9) # Proyeccion paralela alternativa 3
+  # glOrtho(-1, 1, -1, 1, 1, -2) # Proyeccion paralela alternativa 1
+  # glOrtho(-0.4, 0.3, -0.6, 1, 0.3, -1) # Proyeccion paralela alternativa 2
+  glOrtho(-0.8, 1, -0.5, 1, -0.5, 0.9) # Proyeccion paralela alternativa 3
   imprimirMatrizProyecccion()
 
 def imprimirMatrizProyecccion():
@@ -44,8 +44,9 @@ def dibujarPiramide():
   glLoadIdentity ()
 
   #Puntos de vista gloLookAt
-  #gluLookAt(0.1, 0.1, 0.5, 0.2, 0.1, 0.1, 0, 0.1, 0)
-  gluLookAt(0.0, 0.0, 0.5, 0.2, 0.1, 0.1, 0, 0.1, 0)
+  # gluLookAt(0.1, 0.1, 0.5, 0.2, 0.1, 0.1, 0, 0.1, 0)
+  # gluLookAt(0.0, 0.0, 0.5, 0.2, 0.1, 0.1, 0, 0.1, 0)
+  gluLookAt(-0.4, 0.2, 0.5, 0.3, 0.1, 0.1, 0, 0.1, 0)
   #glRotatef(90, 1,0,1)
   imprimirMatrizModelado()
   glutWireCone (0.4,0.4, 3, 4)

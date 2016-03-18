@@ -25,8 +25,8 @@ def init():
   glMatrixMode(GL_PROJECTION)
   glLoadIdentity()
   glFrustum(-0.2, 0.7, -0.7, 0.6, 0.3, 0.8) # Proyeccion perspectiva alternativa 1
-  #glFrustum(-0.6, 0.7, -0.7, 0.1, 0.1, 1) # Proyeccion  perspectiva alternativa 2
-  #glFrustum(-0.3, 0.3, -2, 0.1, 0.2, 0.8) # Proyeccion perspectiva alternativa 3
+  # glFrustum(-0.6, 0.7, -0.7, 0.1, 0.1, 1) # Proyeccion  perspectiva alternativa 2
+  # glFrustum(-0.3, 0.3, -2, 0.1, 0.2, 0.8) # Proyeccion perspectiva alternativa 3
   imprimirMatrizProyecccion()
 
 def imprimirMatrizProyecccion():
@@ -44,9 +44,9 @@ def dibujarPiramide():
   glLoadIdentity ()
 
   # movimiento de la camara
-  gluLookAt(0.6, 0.1, 0.6, 0.2, 0.1, 0.1, 0, 0.1, 0)
-  #gluLookAt(0.0, 0.2, 0.5, 0.2, 0.1, 0.1, 0, 0.1, 0)
-  #gluLookAt(-0.4, 0.2, 0.5, 0.3, 0.1, 0.1, 0, 0.1, 0)
+  # gluLookAt(0.6, 0.1, 0.6, 0.2, 0.1, 0.1, 0, 0.1, 0)
+  # gluLookAt(0.0, 0.2, 0.5, 0.2, 0.1, 0.1, 0, 0.1, 0)
+  gluLookAt(-0.4, 0.2, 0.5, 0.3, 0.1, 0.1, 0, 0.1, 0)
   #glRotatef(90, 1,0,1)
   imprimirMatrizModelado()
   glutWireCone (0.4,0.4, 3, 4)
